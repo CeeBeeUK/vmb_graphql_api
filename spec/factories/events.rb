@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :event do
-    name 'fake_name'
+    name Faker::RickAndMorty.unique.character
   end
 end
