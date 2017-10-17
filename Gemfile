@@ -36,8 +36,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'better_errors'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
