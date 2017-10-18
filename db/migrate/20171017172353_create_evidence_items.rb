@@ -1,6 +1,6 @@
-class CreateEvidence < ActiveRecord::Migration[5.1]
+class CreateEvidenceItems < ActiveRecord::Migration[5.1]
   def change
-    create_table :evidence, id: :uuid do |t|
+    create_table :evidence_items, id: :uuid do |t|
       t.string :short_description
       t.string :long_description
       t.string :transcript

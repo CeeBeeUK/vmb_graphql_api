@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20171017172353) do
     t.string "name"
   end
 
-  create_table "evidence", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "short_description"
-    t.string "long_description"
-    t.string "transcript"
-    t.uuid "evidence_board_id"
-    t.index ["evidence_board_id"], name: "index_evidence_on_evidence_board_id"
-  end
-
   create_table "evidence_boards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "position"
     t.string "label"
@@ -35,6 +27,14 @@ ActiveRecord::Schema.define(version: 20171017172353) do
     t.index ["event_id"], name: "index_evidence_boards_on_event_id"
   end
 
-  add_foreign_key "evidence", "evidence_boards"
+  create_table "evidence_items", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "short_description"
+    t.string "long_description"
+    t.string "transcript"
+    t.uuid "evidence_board_id"
+    t.index ["evidence_board_id"], name: "index_evidence_items_on_evidence_board_id"
+  end
+
   add_foreign_key "evidence_boards", "events"
+  add_foreign_key "evidence_items", "evidence_boards"
 end
