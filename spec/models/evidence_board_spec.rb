@@ -6,6 +6,7 @@ describe EvidenceBoard, type: :model do
   it { is_expected.to be_valid }
 
   it { is_expected.to belong_to :event }
+  it { is_expected.to have_many :evidence_items }
 
   describe 'validation' do
     it { is_expected.to validate_uniqueness_of(:position).ignoring_case_sensitivity.scoped_to(:event_id) }
