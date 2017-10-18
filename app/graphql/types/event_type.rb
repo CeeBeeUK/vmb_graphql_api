@@ -3,4 +3,6 @@ Types::EventType = GraphQL::ObjectType.define do
 
   field :id, !types.String
   field :name, !types.String
+
+  field :evidence_boards, !types[Types::EvidenceBoardType]
 end
