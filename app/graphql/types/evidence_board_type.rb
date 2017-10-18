@@ -5,6 +5,6 @@ Types::EvidenceBoardType = GraphQL::ObjectType.define do
   field :label, !types.String
 
   field :event, Types::EventType do
-    resolve ->(obj, args, ctx) { obj.event }
+    resolve ->(obj, _args, _ctx) { obj.event }
   end
 end
