@@ -7,13 +7,13 @@ end
 
 gem 'graphql'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.4'
-gem 'sass-rails', '~> 5.0'
-gem 'turbolinks', '~> 5'
-gem 'uglifier', '>= 1.3.0'
+gem 'jbuilder'              , '~> 2.5'
+gem 'pg'                    , '~> 0.18'
+gem 'puma'                  , '~> 3.7'
+gem 'rails'                 , '~> 5.1.4'
+gem 'sass-rails'            , '~> 5.0'
+gem 'turbolinks'            , '~> 5'
+gem 'uglifier'              , '>= 1.3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rubocop'             , '~>0.50'
   gem 'shoulda-matchers'
 end
 
@@ -37,4 +38,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
 end

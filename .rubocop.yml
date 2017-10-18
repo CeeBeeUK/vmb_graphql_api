@@ -1,0 +1,23 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - './*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'lib/demo_data/**/*'
+    - 'lib/tasks/**/*'
+    - 'features/**/*'
+    - 'old_features/**/*'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120

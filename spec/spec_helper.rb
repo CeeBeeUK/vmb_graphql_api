@@ -13,6 +13,12 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'simplecov'
+  SimpleCov.start
+  # allow Code Climate Test coverage reports to be sent
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
