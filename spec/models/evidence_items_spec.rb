@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe Evidence, type: :model do
-  subject { build :evidence }
+describe EvidenceItem, type: :model do
+  subject { build :evidence_item }
 
   it { is_expected.to be_valid }
 
