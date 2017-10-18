@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017142838) do
+ActiveRecord::Schema.define(version: 20171017172353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20171017142838) do
     t.string "name"
   end
 
+  create_table "evidence", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "short_description"
+    t.string "long_description"
+    t.string "transcript"
+    t.uuid "evidence_board_id"
+    t.index ["evidence_board_id"], name: "index_evidence_on_evidence_board_id"
+  end
+
   create_table "evidence_boards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "position"
     t.string "label"
@@ -27,5 +35,6 @@ ActiveRecord::Schema.define(version: 20171017142838) do
     t.index ["event_id"], name: "index_evidence_boards_on_event_id"
   end
 
+  add_foreign_key "evidence", "evidence_boards"
   add_foreign_key "evidence_boards", "events"
 end
